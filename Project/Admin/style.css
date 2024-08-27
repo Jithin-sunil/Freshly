@@ -1,0 +1,173 @@
+/* General Body Style */
+body {
+    background-color: #f8f9fa; /* Light grey background */
+    font-family: 'Arial', sans-serif;
+    color: #343a40; /* Dark grey text color */
+}
+
+/* Common Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 70%; /* Further reduced width for a smaller table */
+    background-color: #d6d8db; /* Lighter grey background */
+    color: #343a40; /* Dark grey text */
+    border-collapse: collapse;
+    margin: 0 auto; /* Center table */
+}
+
+table th, table td {
+    padding: 6px; /* Further reduced padding for a more compact look */
+    text-align: center;
+    border: 1px solid #bfc0c2; /* Lighter grey borders */
+}
+
+table th {
+    background-color: #c8c9cc; /* Light grey header */
+}
+
+table tr:nth-child(even) {
+    background-color: #e2e3e5; /* Slightly darker alternate row color */
+}
+
+a.delete-link {
+    color: #dc3545; /* Red color for delete links */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.delete-link:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: #f8f9fa; /* Light grey background for forms */
+    border: 1px solid #ced4da;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    color: #495057;
+    font-weight: bold;
+}
+
+.form-container .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.form-container .btn {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #007bff; /* Bootstrap Primary Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Sidebar Styles */
+
+
+
+/* Header and Navigation Styles */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+.header img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.header .admin-name {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* General Link Styles */
+a {
+    color: #007bff; /* Bootstrap Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Input and Button Focus Styles */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sidebar {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    table {
+        width: 100%; /* Ensure table adjusts to screen size */
+    }
+
+    table th, table td {
+        padding: 5px;
+    }
+}
