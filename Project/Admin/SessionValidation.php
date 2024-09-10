@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['admin_id']==""){
+if($_SESSION['Aid']==""){
     header('location:../Guest/Login.php');
 }
 ?>

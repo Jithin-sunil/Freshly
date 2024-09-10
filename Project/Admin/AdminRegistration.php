@@ -3,6 +3,7 @@
 
 
 include('../Assests/Connection/Connection.php');
+include('Header.php');
 
 
 if(isset($_POST["btnregister"]))
@@ -105,4 +106,8 @@ while($data=$result->fetch_assoc())
 	</tr>
 <?php
 }
+?>
+
+<?php 
+include('footer.php');
 ?>
