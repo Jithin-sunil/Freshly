@@ -121,6 +121,7 @@ include('SessionValidation.php');
                       <span class="badge badge-primary">3</span>
                       <i class="mdi mdi-email-open-outline ml-1"></i>
                     </span>
+                    
                   </a> -->
                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
                     <!-- <span>Profile</span>
