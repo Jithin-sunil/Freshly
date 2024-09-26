@@ -2,6 +2,7 @@
 
 
 include('../Assests/Connection/Connection.php');
+ob_start();
 include('Header.php');
 
 
@@ -108,6 +109,10 @@ while($data=$result->fetch_assoc())
 
 
 
+<?php
+include('Footer.php');
+ob_flush();
+?>
 
 
 

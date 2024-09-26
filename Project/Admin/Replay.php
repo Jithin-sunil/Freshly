@@ -1,6 +1,7 @@
 <?php
 include('../Assests/Connection/Connection.php');
 session_start();
+ob_start();
 include('Header.php');
 if(isset($_POST["submit"]))
 {
@@ -36,3 +37,7 @@ if(isset($_POST["submit"]))
 </form>
 </body>
 </html>
+<?php
+include('Footer.php');
+ob_flush();
+?>

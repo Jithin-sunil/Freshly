@@ -1,5 +1,6 @@
 <?php 
 include('../Assests/Connection/Connection.php');
+ob_start();
 include('Header.php');
 ?>
 
@@ -91,3 +92,7 @@ while($data=$row->fetch_assoc())
 </form>
 </body>
 </html>
+<?php
+include('Footer.php');
+ob_flush();
+?>

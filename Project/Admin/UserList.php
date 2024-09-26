@@ -1,7 +1,9 @@
 <?php
 
 include('../Assests/Connection/Connection.php');
+ob_start();
 include('Header.php');
+
 if(isset($_GET["delID"]))
 {
 	$user_id=$_GET["delID"];
@@ -188,3 +190,7 @@ if(isset($_GET["delID"]))
 </body>
 </html>
 
+<?php
+include('Footer.php');
+ob_flush();
+?>

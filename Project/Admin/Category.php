@@ -1,5 +1,6 @@
 <?php
 include('../Assests/Connection/Connection.php');
+ob_start();
 include('Header.php');
 if(isset($_POST["btnsave"]))
 {
@@ -62,7 +63,15 @@ while($data=$result->fetch_assoc())
 				<td><?php echo $data["category_name"] ?></td>
                 <td><a href="Category.php?delID=<?php echo $data["category_id"]?>">DELETE</a></td>
 		</tr>
-    </table>
-<?php
+		<?php
 }
+
 ?>
+    </table>
+	</body>
+	</html>
+	<?php
+	include('Footer.php');
+	ob_flush();
+	?>
+

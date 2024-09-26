@@ -1,5 +1,6 @@
 <?php
 include('../Assests/Connection/Connection.php');
+ob_start();
 include('Header.php');
 if(isset($_POST["submit"]))
 {
@@ -77,4 +78,5 @@ while($data=$result->fetch_assoc())
 </html>
 <?php 
 include('Footer.php');
+ob_flush();
 ?>
