@@ -8,7 +8,7 @@ include('SessionValidation.php');
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Connect Plus</title>
+    <title>FRESHLY::Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../Assests/Templates/Admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../Assests/Templates/Admin/assets/vendors/flag-icon-css/css/flag-icon.min.css">
@@ -30,8 +30,8 @@ include('SessionValidation.php');
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="../Assests/Templates/Admin/assets/images/logo.svg" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+          <!-- <a class="navbar-brand brand-logo" href="#"><img src="../Assests/Templates/Admin/assets/images/logo.svg" alt="logo" /></a> -->
+          <a class="navbar-brand brand-logo-mini" href="#"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -140,7 +140,7 @@ include('SessionValidation.php');
                     <span>Lock Account</span>
                     <i class="mdi mdi-lock ml-1"></i>
                   </a> -->
-                  <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                  <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="../Logout.php">
                     <span>Log Out</span>
                     <i class="mdi mdi-logout ml-1"></i>
                   </a>
@@ -388,8 +388,8 @@ include('SessionValidation.php');
             </li> -->
             <li class="nav-item sidebar-user-actions">
               <div class="sidebar-user-menu">
-                <a href="#" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
-                  <span class="../Logout.php">Log Out</span></a>
+                <a href="../Logout.php" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
+                  <span class="Logout.php">Log Out</span></a>
               </div>
             </li>
           </ul>

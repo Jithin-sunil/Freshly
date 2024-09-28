@@ -13,7 +13,7 @@ include('Header.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Freshly::ViewComplaint</title>
+<title>Freshly::ReplyedComplaint.php</title>
 <style>
        
 
@@ -32,6 +32,7 @@ include('Header.php');
             border-collapse: collapse;
             margin-bottom: 20px;
             background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for modern look */
         }
 
         th, td {
@@ -67,7 +68,7 @@ include('Header.php');
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f0f8f5;
@@ -87,7 +88,7 @@ include('Header.php');
 <div class="container">
     <a href="HomePage.php">Home</a>
 
-    <h2>User Complaints</h2>
+    <h2>User Complaints - Responses</h2>
     <form id="form" name="form" method="post" action="">
         <table>
             <tr>
@@ -95,10 +96,10 @@ include('Header.php');
                 <th>Title</th>
                 <th>Content</th>
                 <th>Date</th>
-                <th>Action</th>
+                <th>Reply</th>
             </tr>
             <?php
-            $selcomplaint="select * from tbl_complaint p inner join tbl_newuser u on p.user_id=u.user_id where complaint_status=0";
+            $selcomplaint="select * from tbl_complaint p inner join tbl_newuser u on p.user_id=u.user_id where complaint_status=1";
             $row=$con->query($selcomplaint);
             while($data=$row->fetch_assoc())
             {
@@ -108,16 +109,12 @@ include('Header.php');
                 <td><?php echo $data["complaint_title"] ?></td>
                 <td><?php echo $data["complaint_content"] ?></td>
                 <td><?php echo $data["complaint_date"] ?></td>
-                <td>
-                    <?php if($data['complaint_status']==0) { ?>
-                        <a href="Replay.php">REPLY</a>
-                    <?php } else { echo "Replied"; } ?>
-                </td>
+                <td><?php echo $data["complaint_replay"] ?></td>
             </tr>
             <?php } ?>
         </table>
 
-        <h2>Farmer Complaints</h2>
+        <h2>Farmer Complaints - Responses</h2>
         <table>
             <tr>
                 <th>Farmer Name</th>
@@ -127,7 +124,7 @@ include('Header.php');
                 <th>Action</th>
             </tr>
             <?php
-            $selcomplaint="select * from tbl_complaint p inner join tbl_farmers f on p.farmer_id=f.farmer_id where complaint_status=0";
+            $selcomplaint="select * from tbl_complaint p inner join tbl_farmers f on p.farmer_id=f.farmer_id where complaint_status=1";
             $row=$con->query($selcomplaint);
             while($data=$row->fetch_assoc())
             {
@@ -137,7 +134,7 @@ include('Header.php');
                 <td><?php echo $data["complaint_title"] ?></td>
                 <td><?php echo $data["complaint_content"] ?></td>
                 <td><?php echo $data["complaint_date"] ?></td>
-                <td><a href="Replay.php">REPLY</a></td>
+                <td><a href="Replay.php">REPLAY</a></td>
             </tr>
             <?php } ?>
         </table>

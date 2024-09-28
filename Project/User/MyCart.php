@@ -334,7 +334,7 @@ include("../Assests/Connection/Connection.php");
                 {
 					
 					
-					if(isset($_POST["cb_checkout"]))
+					if(isset($_POST["btn_checkout"]))
 					{
 						?>
                     <script>
@@ -449,12 +449,12 @@ include("../Assests/Connection/Connection.php");
             </div>
             
             
-             	<span >COD</span>
+             	<!-- <span >COD</span>
                 <label class="switch2 switch2-checked">
                     <input type="checkbox" name="cb_checkout" checked />
                     <div></div>
                 </label>
-                <span>Card Payment</span>
+                <span>Card Payment</span> -->
             
                 <button type="submit" class="checkout" name="btn_checkout">Checkout</button>
             

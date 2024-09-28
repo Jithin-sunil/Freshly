@@ -33,13 +33,7 @@ if(isset($_GET["delID"]))
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 20px;
-        }
-
+    
         a {
             text-decoration: none;
             color: #007bff;
@@ -79,7 +73,7 @@ if(isset($_GET["delID"]))
         }
 
         th {
-            background-color: #008000;
+            background-color: #4caf50;
             color: white;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -87,6 +81,7 @@ if(isset($_GET["delID"]))
 
         td {
             background-color: #f9f9f9;
+            color: black;
         }
 
         tr:nth-child(even) td {

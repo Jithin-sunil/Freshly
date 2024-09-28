@@ -14,7 +14,7 @@ session_start();
 					?>
 		<script>
 		alert('Payment Completed');
-			//window.location="MyBooking.php";
+			window.location="MyBooking.php";
 			</script>
 		<?php
 				}

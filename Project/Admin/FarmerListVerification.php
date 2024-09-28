@@ -36,59 +36,120 @@ if(isset($_GET["rejID"]))
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Freshly::UserList</title>
 <link rel="stylesheet" href="style.css">
+<style>
+       
+        a {
+            color: #1b5e20; /* Dark green for links */
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0; /* Space between tables */
+            background-color: white;
+            border: 1px solid #4caf50; /* Green border */
+        
+        }
+
+        th, td {
+            
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #4caf50; /* Green borders */
+            color:black;
+        }
+        table th {
+    background-color: #4caf50;
+}
+        th {
+            background-color: #4caf50; /* Green header */
+            /* color: white; */
+        }
+
+        tr:nth-child(even) {
+            background-color: #e8f5e9; /* Light green for alternating rows */
+        }
+
+        tr:hover {
+            background-color: #dcedc8; /* Light green on hover */
+        }
+
+        img {
+            border-radius: 4px; /* Rounded corners for images */
+        }
+
+        .header {
+            font-size: 24px;
+            color: #7FFFD4;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 
+
 <body>
+
 <a href="HomePage.php">Home</a>
+<h2 class="header">Farmer Management List</h2>
+
 <form id="form1" name="form1" method="post" action="">
-  <table width="952" height="115" border="1">
-    <tr>
-      <td width="130">SINo</td>
-      <td width="130">PlaceName</td>
-      <td width="97">Pincode</td>
-      <td width="101">District</td>
-      <td>Photo</td>
-      <td>Proof</td>
-      <td width="82">Name</td>
-      <td width="74">Address</td>
-      <td width="90">Contact</td>
-      <td width="92">Email</td>
-      <td width="98">Action</td>
-    </tr>
-   
-    <?php
-$selquery="select * from tbl_farmers u inner join tbl_place p on u.place_id=p.place_id inner join  tbl_district d on p.district_id=d.district_id where farmer_status='0'";
-$result=$con->query ($selquery);
-$i=0;
-while($data=$result->fetch_assoc())
-{
-	$i++;
-?>
-	<tr>
-				<td><?php echo $i?></td>
-				<td><?php echo $data["place_name"] ?></td>
-				<td><?php echo $data["place_pincode"] ?></td>
+    <table>
+        <tr>
+            <th>SINo</th>
+            <th>Place Name</th>
+            <th>Pincode</th>
+            <th>District</th>
+            <th>Photo</th>
+            <th>Proof</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+
+        <?php
+        $selquery = "SELECT * FROM tbl_farmers u 
+                     INNER JOIN tbl_place p ON u.place_id = p.place_id 
+                     INNER JOIN tbl_district d ON p.district_id = d.district_id 
+                     WHERE farmer_status='1'";
+        $result = $con->query($selquery);
+        $i = 0;
+        while ($data = $result->fetch_assoc()) {
+            $i++;
+        ?>
+            <tr>
+                <td><?php echo $i ?></td>
+                <td><?php echo $data["place_name"] ?></td>
+                <td><?php echo $data["place_pincode"] ?></td>
                 <td><?php echo $data["district_name"] ?></td>
-                <td><img src="../Assests/Files/FarmerDocs/<?php echo $data["farmer_photo"] ?>" width="50" height="50" /></td>
-                <td><img src="../Assests/Files/FarmerDocs/<?php echo $data["farmer_proof"] ?>" width="50" height="50" /></td>
+                <td><img src="../Assests/Files/FarmerDocs/<?php echo $data["farmer_photo"] ?>" width="50" height="50" alt="Farmer Photo" /></td>
+                <td><img src="../Assests/Files/FarmerDocs/<?php echo $data["farmer_proof"] ?>" width="50" height="50" alt="Farmer Proof" /></td>
                 <td><?php echo $data["farmer_name"] ?></td>
-				<td><?php echo $data["farmer_address"] ?></td>
+                <td><?php echo $data["farmer_address"] ?></td>
                 <td><?php echo $data["farmer_contact"] ?></td>
                 <td><?php echo $data["farmer_email"] ?></td>
-                
-                
                 <td>
-                		<a href="FarmerListVerification.php?acID=<?php echo $data["farmer_id"]?>">Accept</a>/
-                        <a href="FarmerListVerification.php?rejID=<?php echo $data["farmer_id"]?>">Reject</a>
-                
+                    <a href="FarmerAcceptedList.php?rejID=<?php echo $data["farmer_id"] ?>">Reject</a>
                 </td>
-	</tr>
-<?php
-}
-?>
-  </table>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
 </form>
+
 </body>
+
 </html>
 <?php
 include('Footer.php');
